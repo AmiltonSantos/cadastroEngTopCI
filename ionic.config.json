@@ -1,0 +1,7 @@
+{
+  "name": "A1000tonTecnologia",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
