@@ -1,0 +1,585 @@
+<ion-header [translucent]="true">
+  <ion-title>
+    <div style="text-align: center; color: #3700B3; font-size: 30px; font-weight: bold; padding-bottom: 5px;">
+      A1000TON
+    </div>
+    <div
+      style="text-align: center; color: #3700B3; font-size: 15px; font-weight: bold; padding-left: 150px;  padding-bottom: 3px;">
+      Tecnologia
+    </div>
+  </ion-title>
+</ion-header>
+
+<ion-content class="ion-no-padding">
+
+  <ion-card>
+    <ion-card-header style="background-color: #3700B3;  height: 42px; padding-top: 4px;">
+
+      <ion-label class="segment-dados-titulo ion-text-uppercase">
+        <ion-icon name="home-outline" slot="start"></ion-icon> INFORMAÇÕES DO IMÓVEL
+      </ion-label>
+
+    </ion-card-header>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" color="primary">Setor:</ion-label>
+            <ion-input type="text" style="text-transform: lowercase;"></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" color="primary">Inscrição:</ion-label>
+            <ion-input type="number" inputmode="numeric" style="text-transform: lowercase;"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" color="primary">Tipo:</ion-label>
+            <ion-input type="text" style="text-transform: lowercase;"></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" color="primary">Logradouro:</ion-label>
+            <ion-input type="text" style="text-transform: lowercase;"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" color="primary">Número:</ion-label>
+            <ion-input type="number" inputmode="numeric" style="text-transform: lowercase;"></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" color="primary">Bairro:</ion-label>
+            <ion-input type="text" style="text-transform: lowercase;"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" color="primary">CEP:</ion-label>
+            <ion-input type="number" inputmode="numeric" style="text-transform: lowercase;"></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" color="primary">Complemento:</ion-label>
+            <ion-input type="text" style="text-transform: lowercase;"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+
+  <ion-card>
+    <ion-card-header style="background-color: #3700B3;  height: 42px; padding-top: 4px;">
+
+      <ion-label class="segment-dados-titulo ion-text-uppercase">
+        <ion-icon name="code-working-outline" slot="start"></ion-icon> ÁREAS DE IMÓVEL
+      </ion-label>
+
+    </ion-card-header>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" color="primary">Frente:</ion-label>
+            <ion-input type="number" inputmode="numeric" style="text-transform: lowercase;"></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" color="primary">Fundo:</ion-label>
+            <ion-input type="number" inputmode="numeric" style="text-transform: lowercase;"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" color="primary">Lado Direito:</ion-label>
+            <ion-input type="number" inputmode="numeric" style="text-transform: lowercase;"></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" color="primary">Lado Esquerdo:</ion-label>
+            <ion-input type="number" inputmode="numeric" style="text-transform: lowercase;"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-item style="padding-top: 10px;">
+        <ion-label position="floating" color="primary" style="color: #3700B3; font-size: 15px;">
+          Área da Unidade Construída: 
+        </ion-label>
+        <ion-textarea type="text" inputmode="text" maxlength="100" style="text-transform: uppercase;" pattern="[0-9]"></ion-textarea>
+      </ion-item>
+
+      <ion-item style="padding-top: 10px;">
+        <ion-label position="floating" color="primary" style="color: #3700B3; font-size: 15px;">
+          Área Total Construida Edificada:
+        </ion-label>
+        <ion-textarea type="text" inputmode="text" maxlength="100" style="text-transform: uppercase;" pattern="[0-9]"></ion-textarea>
+      </ion-item>
+    </ion-grid>
+  </ion-card>
+
+
+  <ion-card>
+    <ion-card-header style="background-color: #3700B3;  height: 42px; padding-top: 4px;">
+
+      <ion-label class="segment-dados-titulo ion-text-uppercase">
+        <ion-icon name="storefront-outline" slot="start"></ion-icon> INFORMAÇÕES GERAIS DO IMÓVEL
+      </ion-label>
+
+    </ion-card-header>
+    <ion-grid>
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" color="primary">Ocupação:</ion-label>
+            <ion-select interface="popover">
+              <ion-select-option value="1">CONSTRUÍDA</ion-select-option>
+              <ion-select-option value="2">NÃO CONSTRUIDA</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" color="primary">Situação:</ion-label>
+            <ion-select interface="popover">
+              <ion-select-option value="1">QUADRA</ion-select-option>
+              <ion-select-option value="2">ESQUINA</ion-select-option>
+              <ion-select-option value="3">MEIO DA QUADRA</ion-select-option>
+              <ion-select-option value="4">VIELA</ion-select-option>
+              <ion-select-option value="5">ENCRAVADO</ion-select-option>
+              <ion-select-option value="6">GLEBA</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" color="primary">Pedologia:</ion-label>
+            <ion-select interface="popover">
+              <ion-select-option value="1">NORMAL</ion-select-option>
+              <ion-select-option value="2">INUNDÁVEL-50...</ion-select-option>
+              <ion-select-option value="3">INUNDÁVEL+50..</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" color="primary">Topografia:</ion-label>
+            <ion-select interface="popover">
+              <ion-select-option value="1">PLANO</ion-select-option>
+              <ion-select-option value="2">ACLIVE</ion-select-option>
+              <ion-select-option value="3">DECLIVE</ion-select-option>
+              <ion-select-option value="4">IRREGULAR</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" color="primary">Limitação:</ion-label>
+            <ion-select interface="popover">
+              <ion-select-option value="1">MURADO</ion-select-option>
+              <ion-select-option value="2">CERCA/SIMILAR</ion-select-option>
+              <ion-select-option value="3">NÃO MURADO</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" color="primary">Patrimônio:</ion-label>
+            <ion-select interface="popover">
+              <ion-select-option value="1">PARTICULAR</ion-select-option>
+              <ion-select-option value="2">MUNICIPAL</ion-select-option>
+              <ion-select-option value="3">ESTADUAL</ion-select-option>
+              <ion-select-option value="4">FEDERAL</ion-select-option>
+              <ion-select-option value="5">RELIGIOSA</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" color="primary">Isento TSU:</ion-label>
+            <ion-select interface="popover">
+              <ion-select-option value="1">SIM</ion-select-option>
+              <ion-select-option value="2">NÃO</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" color="primary">Isento IPTU:</ion-label>
+            <ion-select interface="popover">
+              <ion-select-option value="1">SIM</ion-select-option>
+              <ion-select-option value="2">NÃO</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" color="primary">Uso do Imóvel:</ion-label>
+            <ion-select interface="popover">
+              <ion-select-option value="1">RESIDENCIAL</ion-select-option>
+              <ion-select-option value="2">COMERCIAL</ion-select-option>
+              <ion-select-option value="3">INDUSTRIAL</ion-select-option>
+              <ion-select-option value="4">RELIGIOSO</ion-select-option>
+              <ion-select-option value="5">ADM. PÚBLICA</ion-select-option>
+              <ion-select-option value="6">SERVIÇOS</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" color="primary">Aquisição:</ion-label>
+            <ion-select interface="popover">
+              <ion-select-option value="1">COMPRADA</ion-select-option>
+              <ion-select-option value="2">HERANÇA</ion-select-option>
+              <ion-select-option value="3">DOAÇÃO</ion-select-option>
+              <ion-select-option value="4">INVASÃO</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+
+
+  <ion-card>
+    <ion-card-header style="background-color: #3700B3;  height: 42px; padding-top: 4px;">
+
+      <ion-label class="segment-dados-titulo ion-text-uppercase">
+        <ion-icon name="receipt-outline" slot="start"></ion-icon> INFORMAÇÕES GERAIS DA EDIFICAÇÃO
+      </ion-label>
+
+    </ion-card-header>
+    <ion-grid>
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" color="primary">Tipo da Edificação:</ion-label>
+            <ion-select interface="popover">
+              <ion-select-option value="1">CONST.PRECÁRIA</ion-select-option>
+              <ion-select-option value="2">CASA ALVENÁRIA</ion-select-option>
+              <ion-select-option value="3">CASA MADEIRA</ion-select-option>
+              <ion-select-option value="4">APARTAMENTO</ion-select-option>
+              <ion-select-option value="5">POSTO GASOLINA</ion-select-option>
+              <ion-select-option value="6">SALA COMERCIAL</ion-select-option>
+              <ion-select-option value="7">LOJA</ion-select-option>
+              <ion-select-option value="8">TELHEIRO</ion-select-option>
+              <ion-select-option value="9">INDÚSTRIA</ion-select-option>
+              <ion-select-option value="10">FAVELA</ion-select-option>
+              <ion-select-option value="11">PALAFITA</ion-select-option>
+              <ion-select-option value="12">GALPÃO FECHADO</ion-select-option>
+              <ion-select-option value="13">GALPÃO ABERTO</ion-select-option>
+              <ion-select-option value="14">OUTROS</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" color="primary">Uso da Edificação:</ion-label>
+            <ion-select interface="popover">
+              <ion-select-option value="1">PRÓPRIA</ion-select-option>
+              <ion-select-option value="2">ALUGADA/CEDIDA</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" color="primary">Calçada:</ion-label>
+            <ion-select interface="popover">
+              <ion-select-option value="1">PREDIAL</ion-select-option>
+              <ion-select-option value="2">TERRITÓRIAL</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" color="primary">Situação do Lote:</ion-label>
+            <ion-select interface="popover">
+              <ion-select-option value="1">ISOLADA</ion-select-option>
+              <ion-select-option value="2">CONJUGADA</ion-select-option>
+              <ion-select-option value="3">GERMINADA</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" color="primary">Situação Unid. Construida:</ion-label>
+            <ion-select interface="popover">
+              <ion-select-option value="1">FRENTE</ion-select-option>
+              <ion-select-option value="2">FUNDO</ion-select-option>
+              <ion-select-option value="3">SOBREPOSTA</ion-select-option>
+              <ion-select-option value="4">VILA</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" color="primary">Estrutura:</ion-label>
+            <ion-select interface="popover">
+              <ion-select-option value="1">CONCRETO</ion-select-option>
+              <ion-select-option value="2">ALVENÁRIA</ion-select-option>
+              <ion-select-option value="3">MADEIRA</ion-select-option>
+              <ion-select-option value="4">METÁLICA</ion-select-option>
+              <ion-select-option value="5">MISTA</ion-select-option>
+              <ion-select-option value="6">TAIPA</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" color="primary">Padrão Construtiva:</ion-label>
+            <ion-select interface="popover">
+              <ion-select-option value="1">LUXO</ion-select-option>
+              <ion-select-option value="2">ALTO</ion-select-option>
+              <ion-select-option value="3">MÉDIO</ion-select-option>
+              <ion-select-option value="4">MÉDIO POPULAR</ion-select-option>
+              <ion-select-option value="5">POLPULAR</ion-select-option>
+              <ion-select-option value="6">BAIXO</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" color="primary">Revestimento Interno:</ion-label>
+            <ion-select interface="popover">
+              <ion-select-option value="1">SEM</ion-select-option>
+              <ion-select-option value="2">REBOCO</ion-select-option>
+              <ion-select-option value="3">SIMPLES</ion-select-option>
+              <ion-select-option value="4">LÁTEX</ion-select-option>
+              <ion-select-option value="5">CERÂMICA</ion-select-option>
+              <ion-select-option value="6">ESPECIAL</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" color="primary">Conservação:</ion-label>
+            <ion-select interface="popover">
+              <ion-select-option value="1">BOM</ion-select-option>
+              <ion-select-option value="2">REGULAR</ion-select-option>
+              <ion-select-option value="3">MAU</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" color="primary">Forro:</ion-label>
+            <ion-select interface="popover">
+              <ion-select-option value="1">SEM</ion-select-option>
+              <ion-select-option value="2">MADEIRA</ion-select-option>
+              <ion-select-option value="3">GESSO</ion-select-option>
+              <ion-select-option value="4">LAJE</ion-select-option>
+              <ion-select-option value="5">ESPECIAL</ion-select-option>
+              <ion-select-option value="6">ENTUQUE</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" color="primary">Instal. Sanitária:</ion-label>
+            <ion-select interface="popover">
+              <ion-select-option value="1">SEM</ion-select-option>
+              <ion-select-option value="2">EXTERNA</ion-select-option>
+              <ion-select-option value="3">INTERNA</ion-select-option>
+              <ion-select-option value="4">COMPLETA</ion-select-option>
+              <ion-select-option value="5">DUAS</ion-select-option>
+              <ion-select-option value="6">MAS DE DUAS</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" color="primary">Instal. Elétrica:</ion-label>
+            <ion-select interface="popover">
+              <ion-select-option value="1">SEM</ion-select-option>
+              <ion-select-option value="2">EXTERNA</ion-select-option>
+              <ion-select-option value="3">SEMI EMBUTIDA</ion-select-option>
+              <ion-select-option value="4">EMBUTIDA</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header style="background-color: #3700B3;  height: 42px; padding-top: 4px;">
+
+      <ion-label class="segment-dados-titulo ion-text-uppercase">
+        <ion-icon name="newspaper-outline" slot="start"></ion-icon> INFORMAÇÕES INFRA ESTRUTURA
+      </ion-label>
+
+    </ion-card-header>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" color="primary">Água:</ion-label>
+            <ion-select interface="popover">
+              <ion-select-option value="1">SIM</ion-select-option>
+              <ion-select-option value="2">NÃO</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" color="primary">Piso:</ion-label>
+            <ion-select interface="popover">
+              <ion-select-option value="1">TERRA</ion-select-option>
+              <ion-select-option value="2">TIJOLO</ion-select-option>
+              <ion-select-option value="3">CIMENTO</ion-select-option>
+              <ion-select-option value="4">MADEIRA</ion-select-option>
+              <ion-select-option value="5">CERÂMICA</ion-select-option>
+              <ion-select-option value="6">PISO ESPECIAL</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" color="primary">Cobertura:</ion-label>
+            <ion-select interface="popover">
+              <ion-select-option value="1">PALHA</ion-select-option>
+              <ion-select-option value="2">AMIANTO/FIB.</ion-select-option>
+              <ion-select-option value="3">CERÂMICA</ion-select-option>
+              <ion-select-option value="4">METÂLICO</ion-select-option>
+              <ion-select-option value="5">LAJE</ion-select-option>
+              <ion-select-option value="6">ESPECIAL</ion-select-option>
+              <ion-select-option value="7">TELHADO CO..</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" color="primary">Pintura:</ion-label>
+            <ion-select interface="popover">
+              <ion-select-option value="1">SEM</ion-select-option>
+              <ion-select-option value="2">CAIAÇÃO</ion-select-option>
+              <ion-select-option value="3">LÁTEX</ion-select-option>
+              <ion-select-option value="4">FINA</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" color="primary">Esgoto:</ion-label>
+            <ion-select interface="popover">
+              <ion-select-option value="1">MEIO FIO</ion-select-option>
+              <ion-select-option value="2">GALERIA</ion-select-option>
+              <ion-select-option value="3">ESTRUTURADO</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" color="primary">Energia:</ion-label>
+            <ion-select interface="popover">
+              <ion-select-option value="1">SIM</ion-select-option>
+              <ion-select-option value="2">NÃO</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" color="primary">Iluminação:</ion-label>
+            <ion-select interface="popover">
+              <ion-select-option value="1">SIM</ion-select-option>
+              <ion-select-option value="2">NÃO</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" color="primary" color="primary">Telefone:</ion-label>
+            <ion-select interface="popover">
+              <ion-select-option value="1">SIM</ion-select-option>
+              <ion-select-option value="2">NÃO</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </ion-card>
+
+</ion-content>

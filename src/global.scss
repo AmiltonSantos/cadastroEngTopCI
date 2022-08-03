@@ -24,3 +24,165 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+.inputColBorder,
+.inputColBorderSmall {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  ion-label {
+    font-size: 14px;
+  }
+  ion-input {
+    text-align: center;
+    border-radius: 10px;
+    background-color: #d9d9da47;
+    color: #060606;
+    border-bottom: solid 1.5px;
+    border-color: cornflowerblue;
+
+    input {
+      padding-right: 10px;
+    }
+  }
+}
+
+.segment-dados-titulo {
+  font-size: 14px;
+  font-weight: bold;
+  // color: var(--ion-color-primary-tint);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  height: 42px;
+  padding-top: 9px;
+}
+
+.paddingBtn {
+  --border-radius: 10px !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+
+.alertaCss,
+.alertaCssTres {
+  // Tamanho dinamico do alerta de acordo com a quantidade de informações colocadas!
+  .alert-message.sc-ion-alert-md,
+  .alert-message.sc-ion-alert-ios {
+    padding-top: 10px !important;
+    max-height: unset !important;
+  }
+
+  text-align: center;
+  border-radius: 10px !important;
+  overflow: hidden;
+
+  // Tamanho da imagem no alerta deixar o padrao de 20%!
+  img {
+    display: inline-flex;
+    width: 20%;
+  }
+
+  ion-img {
+    display: inline-flex;
+    width: 40%;
+  }
+
+  .alert-title {
+    color: var(--ion-color-danger);
+  }
+  text {
+    color: darkcyan;
+  }
+  b {
+    color: #000;
+  }
+  p {
+    color: gray;
+  }
+
+  .textDanger {
+    color: #f44336;
+  }
+  .textSuccess {
+    color: #2e7d32;
+  }
+  .textPrimary {
+    color: #244381;
+  }
+  .textTertiary {
+    color: #7044ff;
+  }
+  .textConfortBlue {
+    color: cornflowerblue;
+  }
+  .textTeal {
+    color: teal;
+  }
+  .textOrange {
+    color: #f05924;
+  }
+
+  // Verde
+  .salvarButton {
+    border-color: var(--ion-color-success) !important;
+    background-color: var(--ion-color-success) !important;
+    color: var(--ion-color-light) !important;
+    // background-color: #DFF0D8 !important;
+    // color: #3C763D !important;
+  }
+
+  // Azul
+  .salvarEnviarButton {
+    border-color: #1471dc !important;
+    background-color: #1471dc;
+    color: var(--ion-color-light) !important;
+    // background-color: #D9EDF7 !important;
+    // color: #31708F !important;
+  }
+
+  // Vermelho
+  .cancelarButton {
+    border-color: var(--ion-color-danger) !important;
+    background-color: var(--ion-color-danger) !important;
+    color: var(--ion-color-light) !important;
+    // background-color: #F2DEDE !important;
+    // color: #A94442 !important;
+  }
+
+  // Amarelo
+  .voltarButton {
+    // border-color: var(--ion-color-medium) !important;
+    // background-color: var(--ion-color-medium) !important;
+    // color: var(--ion-color-medium-contrast) !important;
+
+    border-color: var(--ion-color-warning) !important;
+    background-color: var(--ion-color-warning) !important;
+    color: var(--ion-color-warning-contrast) !important;
+    // background-color: #FCF8E3 !important;
+    // color: #8A6D3B !important;
+  }
+
+  .okButton {
+    border-color: var(--ion-color-primary) !important;
+    background-color: var(--ion-color-primary) !important;
+    color: var(--ion-color-light) !important;
+    // background-color: #D9EDF7 !important;
+    // color: #31708F !important;
+  }
+
+  .alert-button {
+    // writing-mode: vertical-lr;
+    height: 35px !important;
+    border-radius: 10px !important;
+    border: 0.3px solid !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  // Centralizando botões
+  .alert-button-group {
+    display: flex;
+    justify-content: center;
+  }
+}
