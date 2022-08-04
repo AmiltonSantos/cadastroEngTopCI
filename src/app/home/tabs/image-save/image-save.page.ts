@@ -64,44 +64,46 @@ export class ImageSavePage {
     }
 
     async touchCapturandoImgs(imagemEsco: string) {
-        const alert = await this.alertController.create({
-            message: '<img src="assets/imgs/pushNotification.png" alt="auto"><br><br> <b>De onde quer pegar a imagem?</b>',
-            backdropDismiss: false,
-            cssClass: 'alertaCssTres',
-            buttons: [
-                {
-                    text: 'Voltar',
-                    cssClass: 'okButton',
-                    handler: () => {
+        if (this.imagem1.length <= 3) {
+            const alert = await this.alertController.create({
+                message: '<img src="assets/imgs/pushNotification.png" alt="auto"><br><br> <b>De onde quer pegar a imagem?</b>',
+                backdropDismiss: false,
+                cssClass: 'alertaCssTres',
+                buttons: [
+                    {
+                        text: 'Voltar',
+                        cssClass: 'okButton',
+                        handler: () => {
 
+                        }
+                    }, {
+                        text: 'GALERIA',
+                        role: 'cancel',
+                        cssClass: 'secondary',
+                        handler: async () => {
+                            await this.getImgCamera(0).then(async () => {
+                                if (this.imgCapt !== '') {
+                                    this.carregandoAsImgs(imagemEsco);
+                                }
+                            });
+                        }
+                    }, {
+                        text: 'CAMERA',
+                        handler: async () => {
+
+                            await this.getImgCamera(1).then(async () => {
+                                if (this.imgCapt !== '') {
+                                    this.carregandoAsImgs(imagemEsco);
+                                }
+                            });
+                        }
                     }
-                }, {
-                    text: 'GALERIA',
-                    role: 'cancel',
-                    cssClass: 'secondary',
-                    handler: async () => {
-                        await this.getImgCamera(0).then(async () => {
-                            if (this.imgCapt !== '') {
-                                this.carregandoAsImgs(imagemEsco);
-                            }
-                        });
-                    }
-                }, {
-                    text: 'CAMERA',
-                    handler: async () => {
-
-                        await this.getImgCamera(1).then(async () => {
-                            if (this.imgCapt !== '') {
-                                this.carregandoAsImgs(imagemEsco);
-                            }
-                        });
-
-                    }
-                }
-            ]
-        });
-
-        await alert.present();
+                ]
+            });
+            await alert.present();
+        } else {
+            await this.alertaComOk('atencao', '<b>Ops! Número máximo de imagem é 4</b>');
+        }
 
     }
 
@@ -208,24 +210,8 @@ export class ImageSavePage {
                 for (const item of this.imagem1) {
                     rowsImage.push([
                         {
-                            image: 'data:image/jpeg;base64,' + item[0],
-                            width: 150,
-                            height: 150,
-                        },
-                        {
-                            image: 'data:image/jpeg;base64,' + item[1],
-                            width: 150,
-                            height: 150,
-                        },
-                        {
-                            image: 'data:image/jpeg;base64,' + item[2],
-                            width: 150,
-                            height: 150,
-                        },
-                        {
-                            image: 'data:image/jpeg;base64,' + item[3],
-                            width: 150,
-                            height: 150,
+                            image: 'data:image/jpeg;base64,' + item,
+                            width: 120,
                         }
                     ]);
                 }
@@ -236,7 +222,7 @@ export class ImageSavePage {
                 pageOrientation: 'portrait', // Modo paisagem
                 content: [
                     /*Cabeçalho do PDF com os dados da empresa e do usuário*/
-                    { text: new Date().toTimeString(), alignment: 'right' },
+                    { text: 'Data do Cadastro: ' + new Date().toLocaleDateString('pt-br'), alignment: 'right' },
 
                     { text: 'Informações Cadastro:', style: 'subheader', color: '#2474a5' },
                     {
@@ -322,12 +308,11 @@ export class ImageSavePage {
                             }
                         }
                     },
+
+                    /*Adiciona Imagem*/
                     {
-                        style: 'tableExample',
-                        table: {
-                            widths: ['auto', 'auto', 'auto', 'auto'],
-                            body: rowsImage
-                        },
+                        alignment: 'justify',
+                        columns: rowsImage
                     },
                     // { text: 'OBS: Quando o numero do pedido conter "/ temporário" o pedido ainda não foi enviado!', fontSize: 6 },
                 ],
