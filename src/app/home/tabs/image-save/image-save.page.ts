@@ -199,21 +199,37 @@ export class ImageSavePage {
         try {
             const rowsItens = [];
             rowsItens.push([{ text: 'Imagem', bold: true, style: 'tableHeader', fontSize: 6, border: [false, false, false, false] }]);
+
+            const rowsDados = [];
+            rowsDados.push([{ text: 'N° Cadastro', bold: true, style: 'tableHeader', fontSize: 6, border: [false, false, false, false] }]);
+
+            const rowsImage = [];
             if (this.imagem1.length > 0) {
-                // eslint-disable-next-line max-len
                 for (const item of this.imagem1) {
-                    rowsItens.push([
+                    rowsImage.push([
                         {
-                            image: 'data:image/jpeg;base64,' + item,
+                            image: 'data:image/jpeg;base64,' + item[0],
+                            width: 150,
+                            height: 150,
+                        },
+                        {
+                            image: 'data:image/jpeg;base64,' + item[1],
+                            width: 150,
+                            height: 150,
+                        },
+                        {
+                            image: 'data:image/jpeg;base64,' + item[2],
+                            width: 150,
+                            height: 150,
+                        },
+                        {
+                            image: 'data:image/jpeg;base64,' + item[3],
                             width: 150,
                             height: 150,
                         }
                     ]);
                 }
             }
-
-            const rowsDados = [];
-            rowsDados.push([{ text: 'N° Cadastro', bold: true, style: 'tableHeader', fontSize: 6, border: [false, false, false, false] }]);
 
             // Montando pdf com os dados acima
             const docDefinition = {
@@ -244,6 +260,7 @@ export class ImageSavePage {
                         },
                         layout: {
                             // tslint:disable-next-line: object-literal-shorthand
+                            // eslint-disable-next-line prefer-arrow/prefer-arrow-functions
                             fillColor(rowIndex) {
                                 // node, columnIndex -
                                 return (rowIndex % 1 === 0) ? '#95b4db' : null;
@@ -261,6 +278,7 @@ export class ImageSavePage {
                         },
                         layout: {
                             // tslint:disable-next-line: object-literal-shorthand
+                            // eslint-disable-next-line prefer-arrow/prefer-arrow-functions
                             fillColor(rowIndex) {
                                 // node, columnIndex -
                                 return (rowIndex % 2 === 0) ? '#d5dfe5' : null;
@@ -273,11 +291,13 @@ export class ImageSavePage {
                         table: {
                             widths: ['*'],
                             body: [
+                                // eslint-disable-next-line max-len
                                 [{ text: 'Informações do Imóvel ', alignment: 'center', bold: true, fontSize: 8, border: [false, false, false, false] }],
                             ]
                         },
                         layout: {
                             // tslint:disable-next-line: object-literal-shorthand
+                            // eslint-disable-next-line prefer-arrow/prefer-arrow-functions
                             fillColor(rowIndex) {
                                 // node, columnIndex -
                                 return (rowIndex % 1 === 0) ? '#95b4db' : null;
@@ -295,18 +315,28 @@ export class ImageSavePage {
 
                         layout: {
                             // tslint:disable-next-line: object-literal-shorthand
+                            // eslint-disable-next-line prefer-arrow/prefer-arrow-functions
                             fillColor(rowIndex) {
                                 // node, columnIndex -
                                 return (rowIndex % 2 === 0) ? '#d5dfe5' : null;
                             }
                         }
                     },
+                    {
+                        style: 'tableExample',
+                        table: {
+                            widths: ['auto', 'auto', 'auto', 'auto'],
+                            body: rowsImage
+                        },
+                    },
                     // { text: 'OBS: Quando o numero do pedido conter "/ temporário" o pedido ainda não foi enviado!', fontSize: 6 },
                 ],
                 // Rodapé
+                // eslint-disable-next-line prefer-arrow/prefer-arrow-functions
                 footer(currentPage: any, pageCount: any) {
                     return {
                         columns: [
+                            // eslint-disable-next-line max-len
                             { text: 'Todos os direitos reservados - Amilton Santos Tecnologia - Copyright' + ' | Pagina ' + currentPage.toString() + ' de ' + pageCount, alignment: 'center', fontSize: 6 }
                         ]
                     };
