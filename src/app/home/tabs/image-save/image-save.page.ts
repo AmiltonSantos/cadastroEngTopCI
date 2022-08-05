@@ -199,12 +199,6 @@ export class ImageSavePage {
         await loading.present();
 
         try {
-            const rowsItens = [];
-            rowsItens.push([{ text: 'Imagem', bold: true, style: 'tableHeader', fontSize: 6, border: [false, false, false, false] }]);
-
-            const rowsDados = [];
-            rowsDados.push([{ text: 'N° Cadastro', bold: true, style: 'tableHeader', fontSize: 6, border: [false, false, false, false] }]);
-
             const rowsImage = [];
             if (this.imagem1.length > 0) {
                 for (const item of this.imagem1) {
@@ -217,112 +211,479 @@ export class ImageSavePage {
                 }
             }
 
+            const rowsSemImagem = [];
+            if (this.imagem1.length === 0) {
+                rowsSemImagem.push([
+                    {
+                        italics: true,
+                        fontSize: 15,
+                        color: '#FF0000',
+                        text: 'NENHUMA IMAGEM ADICIONADA!'
+                    }
+                ]);
+            }
+
             // Montando pdf com os dados acima
             const docDefinition = {
                 pageOrientation: 'portrait', // Modo paisagem
                 content: [
                     /*Cabeçalho do PDF com os dados da empresa e do usuário*/
-                    { text: 'Data do Cadastro: ' + new Date().toLocaleDateString('pt-br'), alignment: 'right' },
-
-                    { text: 'Informações Cadastro:', style: 'subheader', color: '#2474a5' },
                     {
-                        style: 'tableExample',
-                        table: {
-                            heights: ['30', '*'],
-                            body: [
-                                ['Empresa:', { text: '' + 'Amilton Santos Tecnologia' + '', bold: true, }],
-                            ]
-                        },
-                        layout: 'noBorders'
-                    },
-
-                    {
-                        table: {
-                            widths: ['*'],
-                            body: [
-                                // eslint-disable-next-line max-len
-                                [{ text: 'Informações do Proprietário  ', alignment: 'center', fontSize: 8, bold: true, border: [false, false, false, false] }],
-                            ]
-                        },
-                        layout: {
-                            // tslint:disable-next-line: object-literal-shorthand
-                            // eslint-disable-next-line prefer-arrow/prefer-arrow-functions
-                            fillColor(rowIndex) {
-                                // node, columnIndex -
-                                return (rowIndex % 1 === 0) ? '#95b4db' : null;
-                            }
-                        }
-                    },
-
-                    // Dados do Pedido
-                    {
-                        style: 'tableExample',
-                        table: {
-                            widths: ['*'],
-                            headerRows: 1,
-                            body: rowsDados
-                        },
-                        layout: {
-                            // tslint:disable-next-line: object-literal-shorthand
-                            // eslint-disable-next-line prefer-arrow/prefer-arrow-functions
-                            fillColor(rowIndex) {
-                                // node, columnIndex -
-                                return (rowIndex % 2 === 0) ? '#d5dfe5' : null;
-                            }
-                        }
-                    },
-
-                    // Itens do pedido
-                    {
-                        table: {
-                            widths: ['*'],
-                            body: [
-                                // eslint-disable-next-line max-len
-                                [{ text: 'Informações do Imóvel ', alignment: 'center', bold: true, fontSize: 8, border: [false, false, false, false] }],
-                            ]
-                        },
-                        layout: {
-                            // tslint:disable-next-line: object-literal-shorthand
-                            // eslint-disable-next-line prefer-arrow/prefer-arrow-functions
-                            fillColor(rowIndex) {
-                                // node, columnIndex -
-                                return (rowIndex % 1 === 0) ? '#95b4db' : null;
-                            }
-                        }
+                        alignment: 'justify',
+                        columns: [
+                            {
+                                fontSize: 6,
+                                text: 'Governo do Amazonas'
+                            },
+                            {
+                                fontSize: 7,
+                                text: 'DADOS DO CADASTRO DO IMOVEL'
+                            },
+                        ],
                     },
                     {
-                        style: 'tableExample',
-                        table: {
-                            widths: ['*'],
-                            headerRows: 1,
-                            body: rowsItens
-
-                        },
-
-                        layout: {
-                            // tslint:disable-next-line: object-literal-shorthand
-                            // eslint-disable-next-line prefer-arrow/prefer-arrow-functions
-                            fillColor(rowIndex) {
-                                // node, columnIndex -
-                                return (rowIndex % 2 === 0) ? '#d5dfe5' : null;
-                            }
-                        }
+                        alignment: 'justify',
+                        columns: [
+                            {
+                                fontSize: 7,
+                                text: 'Prefeitura Municipal de Iranduba'
+                            },
+                            {
+                                fontSize: 7,
+                                text: 'Exercício Ano: 2022 UFM R$ 90,91'
+                            },
+                        ],
+                    },
+                    {
+                        columns: [
+                            {
+                                fontSize: 7,
+                                text: 'SECRETARIA MUNICIPAL DE FINANÇAS'
+                            },
+                        ],
                     },
 
+                    // eslint-disable-next-line max-len
+                    '----------------------------------------------------------------------------------------------------------------------------------------------------------',
+                    { text: 'Inscrição: 22100001', fontSize: 7 },
+                    { text: 'Endereço do Imóvel: , Bairro:', fontSize: 7 },
+                    { text: 'Complemento: - CEP:', fontSize: 7 },
+                    { text: 'Nome Proprietário: CPF/CNPJ:', fontSize: 7 },
+                    {
+                        columns: [
+                            {
+                                fontSize: 7,
+                                text: 'Nome Proprietário:'
+                            },
+                            {
+                                fontSize: 7,
+                                text: 'CPF/CNPJ:'
+                            },
+                        ],
+                    },
+                    { text: 'Endereço: , Bairro:', fontSize: 7 },
+                    { text: 'Complemento: - CEP:', fontSize: 7 },
+
+                    '\n',
+                    {
+                        alignment: 'justify',
+                        columns: [
+                            {
+                                fontSize: 7,
+                                text: 'IMÓVEL'
+                            },
+                            {
+                                fontSize: 7,
+                                text: 'TERRENO'
+                            },
+                        ],
+                    },
+                    {
+                        alignment: 'justify',
+                        columns: [
+                            {
+                                text: '------------------------------------------------------------------'
+                            },
+                            {
+                                text: '------------------------------------------------------------------'
+                            },
+                        ],
+                    },
+                    {
+                        alignment: 'justify',
+                        columns: [
+                            {
+                                fontSize: 7,
+                                text: 'Ocupação:'
+                            },
+                            {
+                                fontSize: 7,
+                                text: 'Situação:'
+                            },
+                        ],
+                    },
+                    {
+                        alignment: 'justify',
+                        columns: [
+                            {
+                                fontSize: 7,
+                                text: 'Patrimônio:'
+                            },
+                            {
+                                fontSize: 7,
+                                text: 'Topografia:'
+                            },
+                        ],
+                    },
+                    {
+                        alignment: 'justify',
+                        columns: [
+                            {
+                                fontSize: 7,
+                                text: 'USO:'
+                            },
+                            {
+                                fontSize: 7,
+                                text: 'Pedologia:'
+                            },
+                        ],
+                    },
+                    {
+                        alignment: 'justify',
+                        columns: [
+                            {
+                                fontSize: 7,
+                                text: 'Isento IPTU:'
+                            },
+                            {
+                                fontSize: 7,
+                                text: 'Limitação/Muro:'
+                            },
+                        ],
+                    },
+                    {
+                        alignment: 'justify',
+                        columns: [
+                            {
+                                fontSize: 7,
+                                text: 'Aquisição:'
+                            },
+                            {
+                                fontSize: 7,
+                                text: 'Calçada:'
+                            },
+                        ],
+                    },
+                    {
+                        alignment: 'justify',
+                        columns: [
+                            {
+                                fontSize: 7,
+                                text: ''
+                            },
+                            {
+                                fontSize: 7,
+                                text: 'AT - Área do terreno:'
+                            },
+                        ],
+                    },
+                    {
+                        alignment: 'justify',
+                        columns: [
+                            {
+                                text: ''
+                            },
+                            {
+                                fontSize: 7,
+                                text: 'AUC - Área da unidade construida:'
+                            },
+                        ],
+                    },
+                    {
+                        alignment: 'justify',
+                        columns: [
+                            {
+                                text: ''
+                            },
+                            {
+                                fontSize: 7,
+                                text: 'CalATE - Área total construida(Edificada)çada:'
+                            },
+                        ],
+                    },
+
+                    'EDIFICAÇÃO',
+                    // eslint-disable-next-line max-len
+                    '----------------------------------------------------------------------------------------------------------------------------------------------------------',
+                    {
+                        alignment: 'justify',
+                        columns: [
+                            {
+                                fontSize: 7,
+                                text: 'TIPO:'
+                            },
+                            {
+                                fontSize: 7,
+                                text: 'Padrão const:'
+                            },
+                        ],
+                    },
+                    {
+                        alignment: 'justify',
+                        columns: [
+                            {
+                                fontSize: 7,
+                                text: 'Alinhamento:'
+                            },
+                            {
+                                fontSize: 7,
+                                text: 'Conservação:'
+                            },
+                        ],
+                    },
+                    {
+                        alignment: 'justify',
+                        columns: [
+                            {
+                                fontSize: 7,
+                                text: 'Situação do lote:'
+                            },
+                            {
+                                fontSize: 7,
+                                text: 'Inst sanitária:'
+                            },
+                        ],
+                    },
+                    {
+                        alignment: 'justify',
+                        columns: [
+                            {
+                                fontSize: 7,
+                                text: 'Situação unid:'
+                            },
+                            {
+                                fontSize: 7,
+                                text: 'Inst elétrica:'
+                            },
+                        ],
+                    },
+                    { text: 'Estrutura', fontSize: 7 },
+
+                    '\n',
+                    'INFRA ESTRUTURA - Fc 12',
+                    // eslint-disable-next-line max-len
+                    '----------------------------------------------------------------------------------------------------------------------------------------------------------',
+                    {
+                        alignment: 'justify',
+                        columns: [
+                            {
+                                fontSize: 7,
+                                text: 'Água:'
+                            },
+                            {
+                                fontSize: 7,
+                                text: 'Sarjeta:'
+                            },
+                        ],
+                    },
+                    {
+                        alignment: 'justify',
+                        columns: [
+                            {
+                                fontSize: 7,
+                                text: 'Esgoto:'
+                            },
+                            {
+                                fontSize: 7,
+                                text: 'Energia:'
+                            },
+                        ],
+                    },
+                    {
+                        alignment: 'justify',
+                        columns: [
+                            {
+                                fontSize: 7,
+                                text: 'Limpeza:'
+                            },
+                            {
+                                fontSize: 7,
+                                text: 'Iluminação:'
+                            },
+                        ],
+                    },
+                    {
+                        alignment: 'justify',
+                        columns: [
+                            {
+                                fontSize: 7,
+                                text: 'Pavimentação:'
+                            },
+                            {
+                                fontSize: 7,
+                                text: 'Telefone:'
+                            },
+                        ],
+                    },
+                    {
+                        alignment: 'justify',
+                        columns: [
+                            {
+                                fontSize: 7,
+                                text: 'Galeria:'
+                            },
+                            {
+                                fontSize: 7,
+                                text: 'Lixo:'
+                            },
+                        ],
+                    },
+
+                    '\n',
+                    'FOTOS DO IMÓVEL',
+                    // eslint-disable-next-line max-len
+                    '----------------------------------------------------------------------------------------------------------------------------------------------------------',
                     /*Adiciona Imagem*/
                     {
                         alignment: 'justify',
                         columns: rowsImage
                     },
-                    // { text: 'OBS: Quando o numero do pedido conter "/ temporário" o pedido ainda não foi enviado!', fontSize: 6 },
+                    {
+                        alignment: 'center',
+                        columns: rowsSemImagem
+                    },
+
+                    '\n',
+                    'Calculo do IPTU',
+                    // eslint-disable-next-line max-len
+                    '----------------------------------------------------------------------------------------------------------------------------------------------------------',
+                    { text: 'Valor da UFM em R$ 90,91', fontSize: 7 },
+                    { text: 'Alíquota do IPTU (%) 1 Normal', fontSize: 7 },
+
+                    '\n',
+                    'FÓRMULAS',
+                    {
+                        alignment: 'justify',
+                        columns: [
+                            {
+                                fontSize: 7,
+                                text: 'FIT=(AUC/ATE) x AT VT=FIT x (Valor doM²) x Fc1x Fc2x Fc3x Fc4x Fc5'
+                            },
+                            {
+                                fontSize: 7,
+                                text: 'UFM R$:'
+                            },
+                        ],
+                    },
+                    {
+                        alignment: 'justify',
+                        columns: [
+                            {
+                                fontSize: 7,
+                                text: 'VT=AT x (Valor doM²plantadeValores) x Fc1x Fc2x Fc3x Fc4x Fc5'
+                            },
+                            {
+                                fontSize: 7,
+                                text: '#valor1 #valor3'
+                            },
+                        ],
+                    },
+                    {
+                        alignment: 'justify',
+                        columns: [
+                            {
+                                fontSize: 7,
+                                text: 'VE=AUC x (Valor doM²TipodeConstrução) x Fc6x Fc7x Fc8x Fc9x Fc10x Fc11x Fc12:'
+                            },
+                            {
+                                fontSize: 7,
+                                text: '#valor2 #valor4'
+                            },
+                        ],
+                    },
+                    {
+                        alignment: 'justify',
+                        columns: [
+                            {
+                                fontSize: 7,
+                                text: 'Coletade Lixo=AUC x UFMpor M² x UFM:'
+                            },
+                            {
+                                fontSize: 7,
+                                text: '#soma1  #soma2'
+                            },
+                        ],
+                    },
+
+                    '\n',
+                    'LEGENDAS',
+                    {
+                        alignment: 'justify',
+                        columns: [
+                            {
+                                fontSize: 7,
+                                text: 'VV = Valor Venal'
+                            },
+                            {
+                                alignment: 'right',
+                                text: '------------------------------------------------------------------'
+                            },
+                        ],
+                    },
+                    {
+                        alignment: 'justify',
+                        columns: [
+                            {
+                                fontSize: 7,
+                                text: 'VT = Valor do Terreno'
+                            },
+                            {
+                                fontSize: 7,
+                                alignment: 'right',
+                                text: 'IPTU  #valIPTU'
+                            },
+                        ],
+                    },
+                    {
+                        alignment: 'justify',
+                        columns: [
+                            {
+                                fontSize: 7,
+                                text: 'VE = Valor da Edificação'
+                            },
+                            {
+                                fontSize: 7,
+                                alignment: 'right',
+                                text: 'Coleta de lixo   #valColetaLixo'
+                            },
+                        ],
+                    },
+                    {
+                        alignment: 'justify',
+                        columns: [
+                            {
+                                fontSize: 7,
+                                text: 'FIT = Fração Ideal do Terreno'
+                            },
+                            {
+                                fontSize: 7,
+                                alignment: 'right',
+                                text: 'Valor do Carnet   #valCarnet'
+                            },
+                        ],
+                    },
+                    { text: 'AT = Área do Terreno', fontSize: 7 },
+                    { text: 'AUC = Área da Unidade Cosntruída', fontSize: 7 },
+                    { text: 'ATE = Área Total Construída(Edificada)', fontSize: 7 },
                 ],
+
                 // Rodapé
                 // eslint-disable-next-line prefer-arrow/prefer-arrow-functions
                 footer(currentPage: any, pageCount: any) {
                     return {
                         columns: [
                             // eslint-disable-next-line max-len
-                            { text: 'Todos os direitos reservados - Amilton Santos Tecnologia - Copyright' + ' | Pagina ' + currentPage.toString() + ' de ' + pageCount, alignment: 'center', fontSize: 6 }
+                            { text: 'Data do Cadastro: ' + new Date().toLocaleDateString('pt-br') + '- Todos os direitos reservados - Amilton Santos Tecnologia - Copyright' + ' | Pagina ' + currentPage.toString() + ' de ' + pageCount, alignment: 'center', fontSize: 6 }
                         ]
                     };
                 },
