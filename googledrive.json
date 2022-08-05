@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "industrial-balm-358511",
+  "private_key_id": "bc21c8c32d44f7e274db0c8ecbda5de68326ea49",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDD2nrADO3bAZWJ\nuk33+UNAQaXd7shXyPRcVRMo6hOAg+AnECIKVvOaertzbMSHnvoTpxIF9ki0mkQM\nE9hJCsSOIB0U/CYi6uU8A+xCr1fJ/GTTsY2Bx5WDeOwxrImGtq+yefw6XXd+0DoQ\nGYmVyFtrjjLNt3yqR96IYcIWryyUniYoBaZI2ZuO8vI0Bxr7h1EGT5kV2g+d4Zry\nbcqS0Nxtf+T5QArpj8n53MSkOgmnMxNzpS4nFbzUpgsL54dmpH/SbvkRKy9ihPXl\nZnfYy3mjVFiUfTDRXnghQo7kBxTFJu2ON9gpSav59bBBBwe4DvozJFTARkB0wjA5\nmnwA0rDLAgMBAAECggEAA/PEN1zrbdh11o4qZZ8jksfgW36mj1LwT26uEMzMcPL4\nUoF6VmAT0WG5p6YhvyTfogbkj7c9F1vnlKDP5AVyGvYd8B74fArmblQb7+qO6HYN\n6NGz69MFut31UjlLmyrTl9PrWZgqQaZdDZceViXxZlW7w7f4rYz+uhzS6FdHnIYd\nb45VUmhpd6mNXVeQ9tZ6lVw/BSAYVm/ku2YZQpx4Mg5va3ldVvz9eETAAhfBsirf\niuL1fd7RwvpDUdz5QdrdLmyC4yyAl48DBmvhBDaIpgVgOmn3IqgVP1r5Iut2d12u\nVsyNEgPH+w4EjgptwamemlGh5ptP7lZVBGk9wuou+QKBgQDmYEJqa/cySLtOex9L\n0ywA2xh6DwbsWxP9d7uKC4TuYI9QdVy6nRvOoDPtQh2nlsmTHgqztoTqJ6zV3JDt\nWvLYGJ03jeo0NPT8GJpj5SjT7TJYxopS8UB75QZhDl4IRziNHl1vl5hrWk7X5f38\nacGiHryfCIWkKrYxrXjQR79JGQKBgQDZozjaWi1x37d9OMYReZJNljJ/pPORfpKK\n775qlwc/u7XupBAQpEVvimW2/X+hR8KynO9JZux0QF/XLlBJjXYHGfzcxUiTaUJv\nBW+P6tFsBCNOVsRmUhbXd+jY+UIv2iPcIkByVPB0b6VfQ7aGTb7SuFDTYooEA+wu\nBb3yilaxgwKBgA19yaXt2LYrKDz6XOTV4xfRvOc5BhDFbLBFWMhG0GwdX4c4uEt9\nc+lv3FqiqpXr8LYa5kmMANCtriOAHUSpNNuO5XYha3vPNiGlVzVOcEuo8m/cgLFG\ny5311Z/NdZhKg3dQNeyZFiYDTea641rq3pod7rHpj9oDXlQecprP+NXRAoGBALQg\nHDDUC+LAlxvjvkK+TLE8S2VLv28+w8iL7hxIDW7ZTBVL4iPz4agUcmTGYDi6rNCp\nhH5K2g7JLMlqgnatxu7PunF6MrwWlS5P4GrLnTJ6JkJzG6/X5yHEE4pomjgCokVS\nb+ZwmGa19Lfo0gtME1BRzkt1tebm3DWm+PPhPSlDAoGBAKcOuExmbqwAH5nq2Pmb\nyFeC8X0ZOJoG+8KdPxCXcwYT1bqWo2hkGKuMwwrgcWBA/C3a0l3uaaGa7hfSLixf\nz+sckYrB0CiodJltZbhUO0x+B+TDyt/r8kpa+8xJeg3hKmqnJvWWkrjPB+4UgGEd\neYmw+64JNkGuhUszumGTBrgc\n-----END PRIVATE KEY-----\n",
+  "client_email": "googledrive@industrial-balm-358511.iam.gserviceaccount.com",
+  "client_id": "113721990524195218701",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/googledrive%40industrial-balm-358511.iam.gserviceaccount.com"
+}
