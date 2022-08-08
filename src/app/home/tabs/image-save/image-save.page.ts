@@ -261,9 +261,10 @@ export class ImageSavePage {
                     // eslint-disable-next-line max-len
                     '----------------------------------------------------------------------------------------------------------------------------------------------------------',
                     { text: 'Inscrição: 22100001', fontSize: 7 },
-                    { text: 'Endereço do Imóvel: , Bairro:', fontSize: 7 },
-                    { text: 'Complemento: - CEP:', fontSize: 7 },
-                    { text: 'Nome Proprietário:', fontSize: 7 },
+                    { text: 'Endereço do Imóvel:', fontSize: 7 },
+                    { text: 'Bairro:', fontSize: 7 },
+                    { text: 'Complemento:', fontSize: 7 },
+                    { text: 'CEP:', fontSize: 7 },
                     {
                         columns: [
                             {
@@ -406,7 +407,7 @@ export class ImageSavePage {
                             },
                             {
                                 fontSize: 7,
-                                text: 'Calate - Área total construida(Edificada)çada:'
+                                text: 'Calate - Área total construida(Edificada):'
                             },
                         ],
                     },

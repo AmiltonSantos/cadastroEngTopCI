@@ -25,12 +25,13 @@
 
       <ion-row>
         <ion-col>
-          <div style="padding-bottom: 10px;">
+          <div style="padding-bottom: 2px;">
             <p *ngIf="imagem1.length === 0" style="text-align: center;"> Nenhuma imagem adicionada! </p>
             <ion-list>
-              <ion-item *ngFor="let item of imagem1" style="text-align: center;">
+              <ion-item *ngFor="let item of imagem1 let i = index" style="text-align: center;" lines="none">
                 <img src="{{'data:image/jpeg;base64,' + item}}"
                   style="width: 40%; border-radius: 10px !important; margin: 10px;">
+                  <p *ngIf="imagem1.length > 0"> {{i + 1}} </p>
                 <ion-icon slot="end" name="trash-outline" color="danger"
                   (click)="touchRemoverImgEscolhida('imagemEsco1', imagem1, item)">
                 </ion-icon>
@@ -50,13 +51,13 @@
 </ion-content>
 
 <ion-footer  class="ion-no-border">
-  <div style="padding-top:5px; padding-bottom: 20px;">
+  <div style="padding-bottom: 2px;">
     <ion-button class="paddingBtn" expand="block" color="warning">
       <ion-icon slot="start" name="save-outline"></ion-icon> CADASTRAR CI
     </ion-button>
-
+  </div>
+  <div style="padding-bottom: 4px;">
     <ion-button (click)="criarPdfPedido()" class="paddingBtn" expand="block" color="danger">
-      <!-- (click)="touchExportarPdf()"  -->
       <ion-icon slot="start" name="download-outline"></ion-icon> GERAR PDF
     </ion-button>
   </div>
