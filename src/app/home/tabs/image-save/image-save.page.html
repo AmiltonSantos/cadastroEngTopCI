@@ -26,7 +26,7 @@
       <ion-row>
         <ion-col>
           <div style="padding-bottom: 10px;">
-            <p *ngIf="imagem1.length === 0"  style="text-align: center;"> Nenhuma imagem adicionada! </p>
+            <p *ngIf="imagem1.length === 0" style="text-align: center;"> Nenhuma imagem adicionada! </p>
             <ion-list>
               <ion-item *ngFor="let item of imagem1" style="text-align: center;">
                 <img src="{{'data:image/jpeg;base64,' + item}}"
@@ -47,14 +47,17 @@
 
   </ion-card>
 
+</ion-content>
 
+<ion-footer  class="ion-no-border">
   <div style="padding-top:5px; padding-bottom: 20px;">
     <ion-button class="paddingBtn" expand="block" color="warning">
       <ion-icon slot="start" name="save-outline"></ion-icon> CADASTRAR CI
     </ion-button>
-  
-    <ion-button  (click)="criarPdfPedido()" class="paddingBtn" expand="block" color="danger"> <!-- (click)="touchExportarPdf()"  -->
+
+    <ion-button (click)="criarPdfPedido()" class="paddingBtn" expand="block" color="danger">
+      <!-- (click)="touchExportarPdf()"  -->
       <ion-icon slot="start" name="download-outline"></ion-icon> GERAR PDF
     </ion-button>
   </div>
-</ion-content>
+</ion-footer>

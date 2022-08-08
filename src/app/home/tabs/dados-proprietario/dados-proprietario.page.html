@@ -26,7 +26,7 @@
         <ion-col>
           <ion-item>
             <ion-label position="floating" color="primary">Proprietário:</ion-label>
-            <ion-input type="text" style="text-transform: lowercase;"></ion-input>
+            <ion-input type="text" style="text-transform: lowercase;" formControlName="proprietario"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -35,14 +35,14 @@
         <ion-col>
           <ion-item>
             <ion-label position="floating" color="primary">CPF/CNPJ:</ion-label>
-            <ion-input type="number" inputmode="numeric" style="text-transform: lowercase;"></ion-input>
+            <ion-input type="text" pattern="[0-9]*" maxlength="11" style="text-transform: lowercase;" formControlName="cpf"></ion-input>
           </ion-item>
         </ion-col>
 
         <ion-col>
           <ion-item>
             <ion-label position="floating" color="primary">RG:</ion-label>
-            <ion-input type="number" inputmode="numeric" style="text-transform: lowercase;"></ion-input>
+            <ion-input type="number" inputmode="numeric" style="text-transform: lowercase;" formControlName="rg"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -51,14 +51,14 @@
         <ion-col>
           <ion-item>
             <ion-label position="floating" color="primary">Tipo:</ion-label>
-            <ion-input type="text" style="text-transform: lowercase;"></ion-input>
+            <ion-input type="text" style="text-transform: lowercase;" formControlName="tipo1"></ion-input>
           </ion-item>
         </ion-col>
 
         <ion-col>
           <ion-item>
             <ion-label position="floating" color="primary">Logradouro:</ion-label>
-            <ion-input type="text" style="text-transform: lowercase;"></ion-input>
+            <ion-input type="text" style="text-transform: lowercase;" formControlName="logradouro1"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -67,14 +67,14 @@
         <ion-col>
           <ion-item>
             <ion-label position="floating" color="primary">Número:</ion-label>
-            <ion-input type="number" inputmode="numeric" style="text-transform: lowercase;"></ion-input>
+            <ion-input type="number" inputmode="numeric" style="text-transform: lowercase;" formControlName="numero1"></ion-input>
           </ion-item>
         </ion-col>
 
         <ion-col>
           <ion-item>
             <ion-label position="floating" color="primary">Bairro:</ion-label>
-            <ion-input type="text" style="text-transform: lowercase;"></ion-input>
+            <ion-input type="text" style="text-transform: lowercase;" formControlName="bairro1"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -83,14 +83,14 @@
         <ion-col>
           <ion-item>
             <ion-label position="floating" color="primary">CEP:</ion-label>
-            <ion-input type="number" inputmode="numeric" style="text-transform: lowercase;"></ion-input>
+            <ion-input type="text" pattern="[0-9]*" maxlength="8" style="text-transform: lowercase;" formControlName="cep1"></ion-input>
           </ion-item>
         </ion-col>
 
         <ion-col>
           <ion-item>
             <ion-label position="floating" color="primary">Complemento:</ion-label>
-            <ion-input type="text" style="text-transform: lowercase;"></ion-input>
+            <ion-input type="text" style="text-transform: lowercase;" formControlName="complemento1"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>

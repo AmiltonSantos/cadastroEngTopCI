@@ -206,6 +206,7 @@ export class ImageSavePage {
                         {
                             image: 'data:image/jpeg;base64,' + item,
                             width: 120,
+                            height: 150,
                         }
                     ]);
                 }
@@ -254,21 +255,15 @@ export class ImageSavePage {
                             },
                         ],
                     },
-                    {
-                        columns: [
-                            {
-                                fontSize: 7,
-                                text: 'SECRETARIA MUNICIPAL DE FINANÇAS'
-                            },
-                        ],
-                    },
+
+                    { text: 'SECRETARIA MUNICIPAL DE FINANÇAS', fontSize: 7, margin: [0, 0, 0, -5] },
 
                     // eslint-disable-next-line max-len
                     '----------------------------------------------------------------------------------------------------------------------------------------------------------',
                     { text: 'Inscrição: 22100001', fontSize: 7 },
                     { text: 'Endereço do Imóvel: , Bairro:', fontSize: 7 },
                     { text: 'Complemento: - CEP:', fontSize: 7 },
-                    { text: 'Nome Proprietário: CPF/CNPJ:', fontSize: 7 },
+                    { text: 'Nome Proprietário:', fontSize: 7 },
                     {
                         columns: [
                             {
@@ -290,10 +285,14 @@ export class ImageSavePage {
                         columns: [
                             {
                                 fontSize: 7,
+                                bold: true,
+                                margin: [0, 0, 0, -5],
                                 text: 'IMÓVEL'
                             },
                             {
                                 fontSize: 7,
+                                bold: true,
+                                margin: [0, 0, 0, -5],
                                 text: 'TERRENO'
                             },
                         ],
@@ -302,10 +301,10 @@ export class ImageSavePage {
                         alignment: 'justify',
                         columns: [
                             {
-                                text: '------------------------------------------------------------------'
+                                text: '------------------------------------------------------------------------'
                             },
                             {
-                                text: '------------------------------------------------------------------'
+                                text: '----------------------------------------------------------------------------'
                             },
                         ],
                     },
@@ -340,7 +339,7 @@ export class ImageSavePage {
                         columns: [
                             {
                                 fontSize: 7,
-                                text: 'USO:'
+                                text: 'Uso:'
                             },
                             {
                                 fontSize: 7,
@@ -407,12 +406,12 @@ export class ImageSavePage {
                             },
                             {
                                 fontSize: 7,
-                                text: 'CalATE - Área total construida(Edificada)çada:'
+                                text: 'Calate - Área total construida(Edificada)çada:'
                             },
                         ],
                     },
 
-                    'EDIFICAÇÃO',
+                    { text: 'EDIFICAÇÃO', fontSize: 7, bold: true, margin: [0, 0, 0, -5] },
                     // eslint-disable-next-line max-len
                     '----------------------------------------------------------------------------------------------------------------------------------------------------------',
                     {
@@ -420,7 +419,7 @@ export class ImageSavePage {
                         columns: [
                             {
                                 fontSize: 7,
-                                text: 'TIPO:'
+                                text: 'Tipo:'
                             },
                             {
                                 fontSize: 7,
@@ -470,7 +469,7 @@ export class ImageSavePage {
                     { text: 'Estrutura', fontSize: 7 },
 
                     '\n',
-                    'INFRA ESTRUTURA - Fc 12',
+                    { text: 'INFRA ESTRUTURA - Fc 12', fontSize: 7, bold: true, margin: [0, 0, 0, -5] },
                     // eslint-disable-next-line max-len
                     '----------------------------------------------------------------------------------------------------------------------------------------------------------',
                     {
@@ -540,7 +539,7 @@ export class ImageSavePage {
                     },
 
                     '\n',
-                    'FOTOS DO IMÓVEL',
+                    { text: 'FOTOS DO IMÓVEL', fontSize: 7, bold: true, margin: [0, 0, 0, -5] },
                     // eslint-disable-next-line max-len
                     '----------------------------------------------------------------------------------------------------------------------------------------------------------',
                     /*Adiciona Imagem*/
@@ -548,20 +547,22 @@ export class ImageSavePage {
                         alignment: 'justify',
                         columns: rowsImage
                     },
+
+                    /*Mensagem quando nao tiver imagem*/
                     {
                         alignment: 'center',
                         columns: rowsSemImagem
                     },
 
                     '\n',
-                    'Calculo do IPTU',
+                    { text: 'CALCULO DO IPTU', fontSize: 7, bold: true, margin: [0, 0, 0, -5] },
                     // eslint-disable-next-line max-len
                     '----------------------------------------------------------------------------------------------------------------------------------------------------------',
                     { text: 'Valor da UFM em R$ 90,91', fontSize: 7 },
                     { text: 'Alíquota do IPTU (%) 1 Normal', fontSize: 7 },
 
                     '\n',
-                    'FÓRMULAS',
+                    { text: 'FÓRMULAS', fontSize: 7, bold: true },
                     {
                         alignment: 'justify',
                         columns: [
@@ -616,7 +617,7 @@ export class ImageSavePage {
                     },
 
                     '\n',
-                    'LEGENDAS',
+                    { text: 'LEGENDAS', fontSize: 7, bold: true },
                     {
                         alignment: 'justify',
                         columns: [
@@ -626,7 +627,7 @@ export class ImageSavePage {
                             },
                             {
                                 alignment: 'right',
-                                text: '------------------------------------------------------------------'
+                                text: '------------------------------------------------------------------------------'
                             },
                         ],
                     },
@@ -683,7 +684,7 @@ export class ImageSavePage {
                     return {
                         columns: [
                             // eslint-disable-next-line max-len
-                            { text: 'Data do Cadastro: ' + new Date().toLocaleDateString('pt-br') + '- Todos os direitos reservados - Amilton Santos Tecnologia - Copyright' + ' | Pagina ' + currentPage.toString() + ' de ' + pageCount, alignment: 'center', fontSize: 6 }
+                            { text: 'Data do Cadastro: ' + new Date().toLocaleDateString('pt-br') + ' - Todos os direitos reservados - A1000ton Tecnologia - Copyright' + ' | Pagina ' + currentPage.toString() + ' de ' + pageCount, alignment: 'center', fontSize: 6 }
                         ]
                     };
                 },
