@@ -18,22 +18,6 @@ export class DadosImovelPage implements OnInit {
 
     async salvarCadastro() {
         if (this.formCadastro.valid) {
-            this.imovel.setor1 = this.formCadastro.value.setor1;
-            this.imovel.inscricao = this.formCadastro.value.inscricao;
-            this.imovel.tipo2 = this.formCadastro.value.tipo2;
-            this.imovel.logradouro2 = this.formCadastro.value.logradouro2;
-            this.imovel.numero2 = this.formCadastro.value.numero2;
-            this.imovel.cep2 = this.formCadastro.value.cep2;
-            this.imovel.bairro2 = this.formCadastro.value.bairro2;
-            this.imovel.complemento2 = this.formCadastro.value.complemento2;
-
-            this.imovel.frente = this.formCadastro.value.frente;
-            this.imovel.fundo = this.formCadastro.value.fundo;
-            this.imovel.ladodireito = this.formCadastro.value.ladodireito;
-            this.imovel.ladoesquerdo = this.formCadastro.value.ladoesquerdo;
-            this.imovel.areaunidconstr = this.formCadastro.value.areaunidconstr;
-            this.imovel.areatotcostedif = this.formCadastro.value.areatotcostedif;
-
             this.imovel.ocupacao = this.formCadastro.value.ocupacao;
             this.imovel.situacao = this.formCadastro.value.situacao;
             this.imovel.podologia = this.formCadastro.value.podologia;
@@ -56,7 +40,6 @@ export class DadosImovelPage implements OnInit {
             this.imovel.conservacao = this.formCadastro.value.conservacao;
             this.imovel.forro = this.formCadastro.value.forro;
             this.imovel.isntalsanitaria = this.formCadastro.value.isntalsanitaria;
-            this.imovel.areatotcostedif = this.formCadastro.value.areatotcostedif;
             this.imovel.instaleletrica = this.formCadastro.value.instaleletrica;
 
             this.imovel.agua = this.formCadastro.value.agua;
